@@ -1,1062 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohamed Umar | SocialAuditHub</title>
-  <meta
-    name="description"
-    content="Social media marketer and Instagram audit specialist from Kandy, Sri Lanka. Founder of SocialAuditHub, helping brands grow with practical audits, content strategy, and real business insights."
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Import Montserrat font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
+    /* Brand colours */
     :root {
       --navy: #0A1628;
       --blue: #2D6EF5;
       --orange: #FF6B35;
       --white: #FFFFFF;
       --dark-blue: #8899CC;
-      --card: rgba(255, 255, 255, 0.04);
-      --border: rgba(45, 110, 245, 0.35);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --max-width: 1180px;
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+    body {
       font-family: 'Montserrat', sans-serif;
       background: var(--navy);
       color: var(--white);
-      line-height: 1.65;
+      line-height: 1.6;
     }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-.container {
-  max-width: 1150px;
-  width: 100%;
-  margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-}
+    a {
+      color: var(--blue);
+      text-decoration: none;
     }
-
- .section {
-  padding: 96px 0;
-}
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--dark-blue);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      background: rgba(45, 110, 245, 0.07);
+    header {
+      background: var(--navy);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 0 0 12px rgba(255, 107, 53, 0.5);
-    }
-
-    .section-title {
-      margin: 18px 0 12px;
-      font-size: clamp(32px, 4vw, 52px);
-      line-height: 1.08;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .section-subtitle {
-      margin: 0;
-      max-width: 760px;
-      color: var(--dark-blue);
-      font-size: 17px;
-    }
-
-    .accent { color: var(--orange); }
-    .muted { color: var(--dark-blue); }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: rgba(10, 22, 40, 0.82);
-      border-bottom: 1px solid rgba(45, 110, 245, 0.12);
-    }
-
-    .nav {
-      min-height: 78px;
+    nav {
+      max-width: 1180px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0 24px;
+    }
+    nav .brand {
+      font-weight: 700;
+      font-size: 24px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
       gap: 20px;
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: -0.02em;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(45, 110, 245, 0.22), rgba(255, 107, 53, 0.18));
-      border: 1px solid var(--border);
-      display: grid;
-      place-items: center;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
-      font-size: 19px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--dark-blue);
+    nav li {
       font-size: 14px;
-      font-weight: 600;
-      transition: 0.2s ease;
     }
 
-    .nav-links a:hover { color: var(--white); }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 999px;
+    /* General container */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    section {
+      padding: 80px 0;
+    }
+    section h2 {
+      font-size: clamp(32px, 6vw, 42px);
+      margin-bottom: 24px;
       font-weight: 700;
-      font-size: 15px;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-
-    .btn-primary {
       color: var(--white);
-      background: linear-gradient(135deg, var(--blue), #2059cf);
-      box-shadow: 0 16px 40px rgba(45, 110, 245, 0.28);
+    }
+    section p {
+      color: var(--dark-blue);
+      max-width: 700px;
     }
 
-    .btn-secondary {
-      color: var(--white);
-      border-color: var(--border);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
+    /* Hero */
     .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 90px 0 56px;
+      text-align: center;
+      padding: 100px 0 80px;
     }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(70px);
-      opacity: 0.45;
-      pointer-events: none;
-    }
-
-    .hero::before {
-      width: 340px;
-      height: 340px;
-      background: rgba(45, 110, 245, 0.28);
-      top: -80px;
-      left: -60px;
-    }
-
-    .hero::after {
-      width: 280px;
-      height: 280px;
-      background: rgba(255, 107, 53, 0.16);
-      right: -50px;
-      top: 90px;
-    }
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0,1.2fr) minmax(320px, 420px);
-  gap: 40px;
-  align-items: center;
-}
-    .hero-title {
-      margin: 18px 0 18px;
-      font-size: clamp(38px, 6vw, 74px);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-      font-weight: 800;
-      max-width: 760px;
-    }
-
-    .hero-text {
-      margin: 0;
-      max-width: 680px;
-      color: var(--dark-blue);
-      font-size: 18px;
-    }
-
-    .hero-actions {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .hero-stats {
-      margin-top: 32px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      max-width: 720px;
-    }
-
-    .stat-card,
-    .panel,
-    .timeline-item,
-    .service-card,
-    .portfolio-card,
-    .contact-card,
-    .cta-box,
-    .value-card {
-      background: var(--card);
-      border: 1px solid rgba(45, 110, 245, 0.18);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .stat-card {
-      padding: 18px;
-    }
-
-    .stat-value {
-      font-size: 30px;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-    }
-
-    .stat-label {
-      margin-top: 6px;
-      color: var(--dark-blue);
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .profile-panel {
-      padding: 28px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .profile-panel::before {
-      content: "";
-      position: absolute;
-      inset: auto -40px -70px auto;
-      width: 160px;
-      height: 160px;
-      background: radial-gradient(circle, rgba(255, 107, 53, 0.24), transparent 68%);
-      pointer-events: none;
-    }
-
-    .profile-top {
-      display: flex;
-      align-items: center;
-      gap: 16px;
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 56px);
+      font-weight: 900;
       margin-bottom: 20px;
     }
-
-    .avatar {
-      width: 110px;
-      height: 130px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, rgba(45, 110, 245, 0.3), rgba(255, 107, 53, 0.22));
-      border: 1px solid var(--border);
-      overflow: hidden;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
-      flex: 0 0 110px;
+    .hero p {
+      font-size: clamp(16px, 4vw, 22px);
+      max-width: 720px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      color: var(--dark-blue);
+    }
+    .hero .cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .hero .cta a {
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.25s ease;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+    .btn-secondary {
+      background: var(--orange);
+      color: var(--navy);
+    }
+    .btn-primary:hover {
+      background: #4b80f3;
+    }
+    .btn-secondary:hover {
+      background: #ff8a62;
     }
 
-    .avatar img {
-      width: 100%;
+    /* Cards & grids */
+    .grid-2 {
+      display: grid;
+      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card {
+      background: #152749;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      padding: 32px;
       height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
     }
-
-    .profile-name {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .profile-role {
-      color: var(--dark-blue);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .mini-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .mini-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: var(--dark-blue);
-      font-size: 14px;
-    }
-
-    .mini-icon {
-      width: 30px;
-      height: 30px;
-      flex: 0 0 30px;
-      border-radius: 10px;
-      background: rgba(45, 110, 245, 0.12);
-      border: 1px solid rgba(45, 110, 245, 0.2);
-      display: grid;
-      place-items: center;
-      color: var(--blue);
-      font-weight: 800;
-      font-size: 12px;
-    }
-
-.grid-2 {
-  display: grid;
-  gap: 28px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
- .panel {
-  padding: 32px;
-  border-radius: 24px;
-}
-    .panel h3,
-    .service-card h3,
-    .portfolio-card h3,
-    .contact-card h3,
-    .value-card h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-      letter-spacing: -0.03em;
-    }
-
-    .panel p,
-    .service-card p,
-    .portfolio-card p,
-    .contact-card p,
-    .value-card p {
-      margin: 0;
-      color: var(--dark-blue);
-    }
-
-    .check-list,
-    .tag-list,
-    .contact-list,
-    .timeline-list {
-      list-style: none;
-      margin: 18px 0 0;
-      padding: 0;
-      display: grid;
-      gap: 12px;
-    }
-
-    .check-list li,
-    .timeline-list li,
-    .contact-list li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: var(--white);
-      font-size: 15px;
-    }
-
-    .check-list li::before,
-    .timeline-list li::before,
-    .contact-list li::before {
-      content: "✓";
-      width: 22px;
-      height: 22px;
-      flex: 0 0 22px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(45, 110, 245, 0.16);
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 800;
-      margin-top: 1px;
-    }
-
-    .tag-list {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .tag-list li {
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(45, 110, 245, 0.14);
-      color: var(--white);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .services-head,
-    .portfolio-head,
-    .contact-head,
-    .career-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 20px;
-      margin-bottom: 28px;
-    }
-
-.service-card,
-.value-card,
-.portfolio-card,
-.contact-card {
-  padding: 30px;
-  border-radius: 24px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-    .service-card::before,
-    .value-card::before,
-    .portfolio-card::before,
-    .contact-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--blue), var(--orange));
-    }
-
-    .card-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: rgba(45, 110, 245, 0.12);
-      border: 1px solid rgba(45, 110, 245, 0.18);
-      color: var(--orange);
-      font-size: 22px;
-      margin-bottom: 18px;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .timeline-item {
-      padding: 24px;
-      position: relative;
-    }
-
-    .timeline-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .timeline-role {
+    .card h3 {
       font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .timeline-company {
-      color: var(--blue);
       font-weight: 700;
-      margin-top: 2px;
+      margin-bottom: 16px;
     }
-
-    .timeline-date {
-      color: var(--orange);
-      font-weight: 700;
+    .card p {
       font-size: 14px;
-    }
-
-    .portfolio-card .meta,
-    .contact-card .meta {
-      margin-top: 14px;
+      margin-bottom: 16px;
       color: var(--dark-blue);
-      font-size: 14px;
-      font-weight: 600;
     }
-
-    .portfolio-actions,
-    .contact-actions {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .cta-box {
-      padding: 34px;
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: center;
-      flex-wrap: wrap;
-      background: linear-gradient(135deg, rgba(45,110,245,0.12), rgba(255,107,53,0.06));
-    }
-
-    .cta-box h3 {
-      margin: 0 0 10px;
-      font-size: clamp(26px, 3vw, 40px);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-    }
-
-    .footer {
-      padding: 34px 0 50px;
-      border-top: 1px solid rgba(45, 110, 245, 0.14);
-    }
-
-    .footer-wrap {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .footer p {
-      margin: 0;
+    .card ul {
+      margin-left: 16px;
+      margin-bottom: 16px;
       color: var(--dark-blue);
-      font-size: 14px;
     }
 
-@media (max-width: 900px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-}
-}
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media (max-width: 720px) {
-  /* Simplify navigation & spacing on phones */
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px 0;
-  }
-  .nav-links { gap: 14px; flex-wrap: wrap; }
-  .hero { padding-top: 56px; }
-  .section { padding: 72px 0; }
-  .container { padding-left: 16px; padding-right: 16px; }
-  .panel, .service-card, .value-card, .portfolio-card, .contact-card {
-    padding: 22px;
-    border-radius: 20px;
-  }
-  .hero-title { font-size: clamp(34px,10vw,54px); }
-  .section-title { font-size: clamp(28px,8vw,40px); }
-}
-
-      .services-head,
-      .portfolio-head,
-      .contact-head,
-      .career-head,
-      .footer-wrap {
-        align-items: flex-start;
-      }
-
-      .hero-stats {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-      }
+    /* Portfolio card overrides */
+    .portfolio-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+    .portfolio-card .tags {
+      font-size: 12px;
+      color: var(--dark-blue);
+      margin-top: 8px;
     }
 
-   @media (max-width: 980px) {
-  .hero-grid,
-  .grid-2,
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
+    /* Footer */
+    footer {
+      background: #0B1930;
+      color: var(--dark-blue);
+      padding: 40px 0;
+      text-align: center;
+    }
 
-  .services-head,
-  .portfolio-head,
-  .contact-head,
-  .career-head,
-  .footer-wrap {
-    align-items: flex-start;
-  }
-
-  .hero-stats {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-  }
-
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media (max-width: 720px) {
-  .nav {
-    padding: 14px 0;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .nav-links {
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .hero {
-    padding-top: 56px;
-  }
-
-  .section {
-    padding: 72px 0;
-  }
-
-  .tag-list {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-box {
-    padding: 24px;
-  }
-
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .panel,
-  .service-card,
-  .value-card,
-  .portfolio-card,
-  .contact-card,
-  .timeline-item {
-    padding: 22px;
-    border-radius: 20px;
-  }
-
-  .hero-title {
-    font-size: clamp(34px, 10vw, 54px);
-  }
-
-  .section-title {
-    font-size: clamp(28px, 8vw, 40px);
-  }
-}
-      .nav {
-        padding: 14px 0;
-        align-items: flex-start;
-        flex-direction: column;
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
       }
-
-      .nav-links {
-        gap: 14px;
-      }
-
       .hero {
-        padding-top: 56px;
+        padding-top: 80px;
       }
-
-      .section {
-        padding: 68px 0;
+      section {
+        padding: 64px 0;
       }
-
-      .tag-list {
-        grid-template-columns: 1fr;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
       }
-
-      .cta-box {
-        padding: 26px;
+      .hero h1 {
+        font-size: 34px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      .card {
+        padding: 24px;
       }
     }
   </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a href="#home" class="brand">
-        <span class="brand-mark">SA</span>
-        <span>SocialAuditHub</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#experience">Experience</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="brand">SocialAuditHub</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Social Media Marketing Audits</span>
-          <h1 class="hero-title">
-            Helping brands grow through <span class="accent">clear audits</span>, smart content strategy, and practical marketing insight.
-          </h1>
-          <p class="hero-text">
-            I’m Mohamed Umar, founder of <strong>SocialAuditHub</strong> in Kandy, Sri Lanka. I create real social media audits, review brand performance, and help businesses improve their content, engagement, and online presence.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#portfolio">View My Work</a>
-            <a class="btn btn-secondary" href="#contact">Hire Me</a>
-          </div>
-
-          <div class="hero-stats">
-            <div class="stat-card">
-              <div class="stat-value">2+</div>
-              <div class="stat-label">Completed real brand audits</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value">1</div>
-              <div class="stat-label">Founder-led personal marketing brand</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value">2026</div>
-              <div class="stat-label">Digital marketing diploma completion target</div>
-            </div>
-          </div>
-        </div>
-
-        <aside class="profile-panel panel">
-          <div class="profile-top">
-            <div class="avatar"><img src="umar-photo.jpg" alt="Mohamed Umar"></div>
-            <div>
-              <div class="profile-name">Mohamed Umar</div>
-              <div class="profile-role">Social Media Marketer · Content Creator · Instagram Audit Specialist</div>
-            </div>
-          </div>
-
-          <p class="muted">
-            Open to full-time, freelance, and remote opportunities in Sri Lanka, Dubai, and international markets.
-          </p>
-
-          <div class="mini-list">
-            <div class="mini-item">
-              <div class="mini-icon">📍</div>
-              <div>Kandy, Sri Lanka</div>
-            </div>
-            <div class="mini-item">
-              <div class="mini-icon">✉</div>
-              <div><a href="mailto:mohamedumxr@gmail.com">mohamedumxr@gmail.com</a></div>
-            </div>
-            <div class="mini-item">
-              <div class="mini-icon">☎</div>
-              <div><a href="tel:+94760818230">+94 7608 18230</a></div>
-            </div>
-            <div class="mini-item">
-              <div class="mini-icon">@</div>
-              <div>@SocialAuditHub</div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" id="about">
+    <!-- Hero -->
+    <section class="hero">
       <div class="container">
-        <span class="eyebrow">About Me</span>
-        <h2 class="section-title">A job-ready portfolio built around <span class="accent">real audit work</span>.</h2>
-        <p class="section-subtitle">
-          I am a self-driven social media marketing professional with hands-on experience in Instagram audits, content creation, and brand growth strategy. I’m currently completing a Diploma in Digital Marketing and building SocialAuditHub through practical audit content for real businesses.fileciteturn0file0L1-L18
+        <h1>Helping brands grow through clear audits and smart strategy</h1>
+        <p>
+          I’m Mohamed Umar, a social media marketer and Instagram audit specialist.  I help
+          businesses in Sri Lanka, Dubai and beyond unlock real growth through expert analysis and
+          actionable marketing insights.
         </p>
-
-        <div class="grid-2" style="margin-top: 28px;">
-          <div class="panel">
-            <h3>What I bring</h3>
-            <ul class="check-list">
-              <li>Practical social media audit thinking based on real local businesses</li>
-              <li>Clear eye for content gaps, engagement issues, and brand improvement</li>
-              <li>Strong visual content support using Canva and short-form video tools</li>
-              <li>Comfortable communication in English and Tamil</li>
-            </ul>
-          </div>
-
-          <div class="panel">
-            <h3>Core skills</h3>
-            <ul class="tag-list">
-              <li>Social Media Marketing</li>
-              <li>Instagram Auditing</li>
-              <li>Content Strategy</li>
-              <li>Canva Design</li>
-              <li>CapCut Video Editing</li>
-              <li>Meta Business Suite</li>
-              <li>Caption & Hashtag Writing</li>
-              <li>AI Tools</li>
-            </ul>
-          </div>
+        <div class="cta">
+          <a href="My%20CV%20(1).pdf" class="btn-primary">Download CV</a>
+          <a href="#contact" class="btn-secondary">Hire Me</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="services">
+    <!-- About -->
+    <section id="about">
       <div class="container">
-        <div class="services-head">
-          <div>
-            <span class="eyebrow">Services</span>
-            <h2 class="section-title">What I can do for brands and employers</h2>
-          </div>
-          <p class="section-subtitle">
-            Focused on helping businesses improve social media performance with actionable ideas, clearer content direction, and stronger brand presentation.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="service-card">
-            <div class="card-icon">🔎</div>
-            <h3>Instagram Audits</h3>
-            <p>Detailed profile reviews covering bio strength, content clarity, engagement opportunities, visuals, posting structure, and growth suggestions.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="card-icon">📈</div>
-            <h3>Content Strategy Support</h3>
-            <p>Practical direction for captions, content themes, positioning, and audience-focused ideas that help brands look clearer and more consistent.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="card-icon">🎨</div>
-            <h3>Creative Marketing Assets</h3>
-            <p>Support with Canva designs, short-form content, and visual presentation to make brand communication stronger and more professional.</p>
-          </article>
-        </div>
+        <h2>About Me</h2>
+        <p>
+          I’m the founder of SocialAuditHub and a self-driven social media marketing professional
+          based in Kandy, Sri Lanka.  I’ve grown local cafés and boutiques through detailed Instagram
+          audits, content strategy and hands-on marketing execution.
+        </p>
       </div>
     </section>
 
-    <section class="section" id="experience">
+    <!-- Services -->
+    <section id="services">
       <div class="container">
-        <div class="career-head">
-          <div>
-            <span class="eyebrow">Experience & Education</span>
-            <h2 class="section-title">Built from real practice, not only theory</h2>
-          </div>
-          <p class="section-subtitle">
-            My portfolio combines self-initiated practical work with formal digital marketing studies, which makes it relevant for internships, junior roles, freelance work, and client projects.
-          </p>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <div>
-                <div class="timeline-role">Founder & Social Media Auditor</div>
-                <div class="timeline-company">SocialAuditHub — Self-Initiated Project</div>
-              </div>
-              <div class="timeline-date">2026 – Present</div>
-            </div>
-            <ul class="timeline-list">
-              <li>Conducted real Instagram audits for Sri Lankan businesses including cafés and hotel resorts</li>
-              <li>Created and published audit content on YouTube and Instagram for real audiences</li>
-              <li>Analyzed engagement, content strategy, and growth opportunities for each brand</li>
-              <li>Built a portfolio with completed audits, notes, screenshots, and supporting documentation</li>
-              <li>Used Meta Business Suite and Canva to support publishing and branding work</li>
-            </ul>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <div>
-                <div class="timeline-role">Diploma in Digital Marketing</div>
-                <div class="timeline-company">ICBT Campus, Kandy</div>
-              </div>
-              <div class="timeline-date">Aug 2025 – Apr 2026</div>
-            </div>
-            <p class="muted">Final assignment pending, completing in April 2026.fileciteturn0file0L33-L38</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="portfolio">
-      <div class="container">
-        <div class="portfolio-head">
-          <div>
-            <span class="eyebrow">Portfolio</span>
-            <h2 class="section-title">Real audits. Real businesses. Real proof.</h2>
-          </div>
-          <p class="section-subtitle">
-            My current portfolio includes audit work for Sri Lankan businesses, with video content, notes, screenshots, and improvement suggestions.fileciteturn0file0L41-L45
-          </p>
-        </div>
-
+        <h2>Services</h2>
         <div class="grid-2">
-          <article class="portfolio-card">
-            <div class="card-icon">☕</div>
-            <h3><article class="portfolio-card">
-  <div class="card-icon">☕</div>
-  <h3>Audit 01 — The Trees Café, Kandy</h3>
-  <p>
-    Instagram audit focused on profile clarity, content presentation, and caption quality.
-    This review shows practical proof of my audit thinking for a real local business.
-  </p>
-
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px; margin-top:20px;">
-    <img src="audit1-profile.jpg" alt="The Trees Cafe profile review" style="width:100%; border-radius:16px; border:1px solid rgba(45,110,245,0.25); display:block;">
-    <img src="audit1-post.jpg" alt="The Trees Cafe content feed review" style="width:100%; border-radius:16px; border:1px solid rgba(45,110,245,0.25); display:block;">
-    <img src="audit1-caption.jpg" alt="The Trees Cafe caption review" style="width:100%; border-radius:16px; border:1px solid rgba(45,110,245,0.25); display:block;">
-  </div>
-
-  <div class="meta">Profile review · Feed review · Caption review</div>
-</article></h3>
-            <p>Instagram audit focused on brand presentation, content quality, engagement direction, and practical growth suggestions for a local café brand.</p>
-            <div class="meta">Audit video · Short content · Notes · Screenshots</div>
-          </article>
-
-          <article class="portfolio-card">
-            <div class="card-icon">🏨</div>
-            <h3><article class="portfolio-card">
-  <div class="card-icon">🎥</div>
-  <h3>Audit 02 — Viyana Boutique</h3>
-  
-  <p>
-    Short Instagram audit showing content quality, branding, and engagement improvements.
-  </p>
-
-  <div style="margin-top:20px;">
-    <a href="https://drive.google.com/file/d/1FRQheTRfavjqa-FmMVk6CIwjmqBjKzKq/view?usp=sharing" target="_blank">
-      <img src="audit2-thumbnail.jpg" alt="Viyana Boutique audit" style="width:100%; border-radius:16px; border:1px solid rgba(45,110,245,0.25);">
-    </a>
-  </div>
-
-  <div class="meta">
-    Video audit · Branding · Content strategy
-  </div>
-</article></h3>
-            <p>Audit review covering visual branding, audience communication, profile presentation, and stronger opportunities for hotel-focused social content.</p>
-            <div class="meta">Audit video · Short content · Notes · Screenshots</div>
-          </article>
-        </div>
-
-        <div class="cta-box" style="margin-top: 24px;">
-          <div>
-            <h3>Want to see the full audit portfolio?</h3>
-            <p class="muted">Open the Google Drive portfolio folder with supporting work, audit materials, and content examples.</p>
+          <div class="card">
+            <h3>Instagram Audits</h3>
+            <p>Deep diagnostics on profiles, content and captions.  Identify what’s working and what needs improvement.</p>
+            <ul>
+              <li>Profile & bio review</li>
+              <li>Feed & story analysis</li>
+              <li>Caption & hashtag strategy</li>
+            </ul>
           </div>
-          <div class="portfolio-actions">
-            <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1JO6CkblYF1SxT-L5SO6B6KOOcq0dmxpl?usp=drive_link" target="_blank" rel="noopener noreferrer">Open Portfolio Folder</a>
+          <div class="card">
+            <h3>Content Strategy</h3>
+            <p>Plan and execute content calendars that build community and drive engagement.</p>
+            <ul>
+              <li>Theme & tone definition</li>
+              <li>Creative direction</li>
+              <li>Publishing schedule</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Social Media Management</h3>
+            <p>Done‑for‑you social media management so you can focus on your business.</p>
+            <ul>
+              <li>Daily posting & monitoring</li>
+              <li>Audience growth</li>
+              <li>Analytics & reporting</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Training & Consulting</h3>
+            <p>Empower your team with tailored workshops and guidance on digital marketing best practices.</p>
+            <ul>
+              <li>One‑on‑one coaching</li>
+              <li>Team workshops</li>
+              <li>Ongoing support</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <!-- Experience -->
+    <section id="experience">
       <div class="container">
-        <div class="contact-head">
-          <div>
-            <span class="eyebrow">Contact</span>
-            <h2 class="section-title">Available for jobs, freelance work, and remote opportunities</h2>
+        <h2>Experience</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>SocialAuditHub – Founder</h3>
+            <p>2023 – Present</p>
+            <p>
+              Founded and grew SocialAuditHub, delivering social media audits and strategies for cafés
+              and boutique hotels across Sri Lanka.
+            </p>
           </div>
-          <p class="section-subtitle">
-            Suitable for entry-level marketing roles, internships, freelance social media work, and content support positions in Sri Lanka, Dubai, and international teams.
+          <div class="card">
+            <h3>Freelance Social Media Marketer</h3>
+            <p>2022 – 2023</p>
+            <p>
+              Managed Instagram accounts, designed Canva visuals and executed campaigns for local
+              brands.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+
+        <!-- Audit 1 -->
+        <div class="card portfolio-card" style="margin-bottom:32px;">
+          <h3>Audit 01 – The Trees Café</h3>
+          <p class="tags">Profile review · Feed review · Caption review</p>
+          <div class="grid-2" style="margin-top:24px;">
+            <img src="audit1-profile.jpg" alt="Profile review">
+            <img src="audit1-post.jpg" alt="Feed review">
+            <img src="audit1-caption.jpg" alt="Caption review">
+          </div>
+          <p style="margin-top:20px; color:var(--dark-blue);">
+            Instagram audit focused on brand presentation, content quality, engagement direction
+            and practical growth suggestions for a local café.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="contact-card">
-            <div class="card-icon">✉</div>
-            <h3>Email</h3>
-            <p>For recruiters, clients, and collaborations.</p>
-            <div class="contact-actions">
-              <a class="btn btn-secondary" href="mailto:mohamedumxr@gmail.com">mohamedumxr@gmail.com</a>
-            </div>
-          </article>
-
-          <article class="contact-card">
-            <div class="card-icon">☎</div>
-            <h3>Phone</h3>
-            <p>Reach me directly for interview and project discussions.</p>
-            <div class="contact-actions">
-              <a class="btn btn-secondary" href="tel:+94760818230">+94 7608 18230</a>
-            </div>
-          </article>
-
-          <article class="contact-card">
-            <div class="card-icon">📱</div>
-            <h3>Brand Channel</h3>
-            <p>SocialAuditHub across your content platforms.</p>
-            <div class="contact-actions">
-              <a class="btn btn-secondary" href="https://instagram.com/socialaudithub" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a class="btn btn-secondary" href="https://youtube.com/@SocialAuditHub" target="_blank" rel="noopener noreferrer">YouTube</a>
-            </div>
-          </article>
+        <!-- Audit 2 -->
+        <div class="card portfolio-card">
+          <h3>Audit 02 – Viyana Boutique</h3>
+          <p class="tags">Video audit · Branding · Content strategy</p>
+          <div style="margin-top:24px;">
+            <a href="https://drive.google.com/file/d/1FRQheTRfavjqa-FmMVk6CIwjmqBjKzKq/view?usp=sharing" target="_blank">
+              <img src="audit2-thumbnail.jpg" alt="Viyana Boutique audit video">
+            </a>
+          </div>
+          <p style="margin-top:20px; color:var(--dark-blue);">
+            Short-form Instagram audit showing content quality, branding and engagement improvements
+            for a boutique hotel.
+          </p>
         </div>
+      </div>
+    </section>
+
+    <!-- Contact / Hire Me -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          Ready to grow your brand?  I’m open to full‑time, freelance and remote opportunities in
+          Sri Lanka, Dubai and international markets.
+        </p>
+        <p style="margin-top:12px;">
+          <strong>Phone:</strong> <a href="tel:+94760818230">+94 7608 18230</a><br>
+          <strong>Email:</strong> <a href="mailto:mohamedumxr@gmail.com">mohamedumxr@gmail.com</a>
+        </p>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-wrap">
-      <div class="brand">
-        <span class="brand-mark">SA</span>
-        <span>SocialAuditHub</span>
-      </div>
-      <p>Built for Mohamed Umar — Social Media Marketing Audits · Kandy, Sri Lanka</p>
-    </div>
+  <footer>
+    <p>© 2026 SocialAuditHub. All rights reserved.</p>
   </footer>
 </body>
 </html>
