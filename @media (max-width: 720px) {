@@ -49,10 +49,9 @@
 }
     }
 
-    .section {
-      padding: 88px 0;
-    }
-
+ .section {
+  padding: 96px 0;
+}
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -210,12 +209,12 @@
       top: 90px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 34px;
-      align-items: center;
-    }
+ .hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 420px);
+  gap: 40px;
+  align-items: center;
+}
 
     .hero-title {
       margin: 18px 0 18px;
@@ -362,22 +361,22 @@
       font-size: 12px;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-
+  .grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 28px;
+  align-items: start;
+}
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
-    .panel {
-      padding: 28px;
-    }
-
+ .panel {
+  padding: 32px;
+  border-radius: 24px;
+}
     .panel h3,
     .service-card h3,
     .portfolio-card h3,
@@ -460,15 +459,16 @@
       margin-bottom: 28px;
     }
 
-    .service-card,
-    .value-card,
-    .portfolio-card,
-    .contact-card {
-      padding: 26px;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-    }
+.service-card,
+.value-card,
+.portfolio-card,
+.contact-card {
+  padding: 30px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
 
     .service-card::before,
     .value-card::before,
