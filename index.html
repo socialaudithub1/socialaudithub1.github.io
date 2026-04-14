@@ -362,9 +362,8 @@
 
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 28px;
-  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
     .grid-3 {
       display: grid;
@@ -585,9 +584,10 @@
     }
 
  @media (max-width: 980px) {
-  .hero-grid, .grid-2, .grid-3 {
+  .grid-2 {
     grid-template-columns: 1fr;
   }
+}
   .container {
     padding-left: 20px;
     padding-right: 20px;
