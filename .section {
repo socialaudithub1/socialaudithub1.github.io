@@ -41,8 +41,12 @@
     img { max-width: 100%; display: block; }
 
     .container {
-      width: min(var(--max-width), calc(100% - 32px));
-      margin: 0 auto;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
     }
 
     .section {
