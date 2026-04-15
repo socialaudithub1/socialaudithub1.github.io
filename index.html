@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohamed Umar | SocialAuditHub</title>
-  <!-- Google Fonts: Montserrat family -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <title>Mohamed Umar | Social Media Marketer</title>
+  <!-- Load Montserrat font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     /*
-      Theme: Modern dark palette inspired by premium technology brands.
-      Colours are defined as CSS variables for easy re‑use throughout the file.
-    */
+     * Colour palette based on SocialAuditHub brand kit
+     * Navy, Blue and Orange set the mood while white and dark blue
+     * provide readable contrast for text and subtle accents.
+     */
     :root {
       --navy: #0A1628;
       --blue: #2D6EF5;
       --orange: #FF6B35;
       --white: #FFFFFF;
       --dark-blue: #8899CC;
-      --card-bg: #152749;
-      --border-colour: rgba(45, 110, 245, 0.25);
-      --shadow-colour: rgba(0, 0, 0, 0.15);
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -28,7 +27,7 @@
     }
     body {
       font-family: 'Montserrat', sans-serif;
-      background: var(--navy);
+      background-color: var(--navy);
       color: var(--white);
       line-height: 1.6;
     }
@@ -36,94 +35,90 @@
       color: var(--blue);
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+    img {
+      max-width: 100%;
+      height: auto;
     }
-    /* Navigation bar */
-    header {
-      background: var(--navy);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    nav .brand {
-      font-size: 26px;
-      font-weight: 700;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 24px;
-    }
-    nav li {
-      font-size: 14px;
-      font-weight: 500;
-    }
-    nav a {
-      color: var(--white);
-      transition: color 0.2s ease;
-    }
-    nav a:hover {
-      color: var(--blue);
-    }
-    /* Container */
+
+    /* Layout containers */
     .container {
-      max-width: 1180px;
+      max-width: 1150px;
+      width: 100%;
       margin: 0 auto;
-      padding: 0 24px;
+      padding-left: 24px;
+      padding-right: 24px;
     }
-    /* Section styling */
     section {
-      padding: 96px 0;
+      padding: 90px 0;
     }
     section h2 {
-      font-size: clamp(32px, 6vw, 40px);
+      font-weight: 800;
+      font-size: clamp(32px, 6vw, 44px);
       margin-bottom: 24px;
-      font-weight: 700;
       color: var(--white);
     }
     section p {
       color: var(--dark-blue);
-      max-width: 760px;
+      font-size: 16px;
     }
-    /* Hero area */
+
+    /* Navigation */
+    header {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 18px 24px;
+    }
+    nav .brand {
+      font-weight: 800;
+      font-size: 24px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav li {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Hero section */
     .hero {
-      padding: 120px 0 100px;
       text-align: center;
+      padding: 100px 0 80px;
     }
     .hero h1 {
-      font-size: clamp(42px, 8vw, 56px);
-      font-weight: 900;
+      font-weight: 800;
+      font-size: clamp(40px, 8vw, 58px);
       margin-bottom: 20px;
       line-height: 1.2;
     }
     .hero p {
-      font-size: clamp(16px, 4vw, 22px);
-      max-width: 720px;
-      margin: 0 auto 40px;
+      font-size: clamp(16px, 4vw, 20px);
       color: var(--dark-blue);
+      max-width: 760px;
+      margin: 0 auto 40px;
     }
-    .hero .cta {
+    .cta {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 16px;
     }
-    .hero .cta a {
+    .btn {
       display: inline-block;
       padding: 14px 28px;
       border-radius: 8px;
-      font-weight: 600;
-      transition: background 0.25s ease;
+      font-weight: 700;
+      transition: background 0.2s ease;
     }
     .btn-primary {
       background: var(--blue);
@@ -133,28 +128,19 @@
       background: var(--orange);
       color: var(--navy);
     }
-    .btn-primary:hover {
-      background: #4b80f3;
-    }
-    .btn-secondary:hover {
-      background: #ff8a62;
-    }
-    /* Grid layouts for cards */
+    .btn-primary:hover { background: #4b80f3; }
+    .btn-secondary:hover { background: #ff8a62; }
+
+    /* Cards & grids */
     .grid-2 {
       display: grid;
       gap: 32px;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
-    .grid-3 {
-      display: grid;
-      gap: 32px;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-    /* Card component */
     .card {
-      background: var(--card-bg);
+      background: #152749;
       border-radius: 20px;
-      box-shadow: 0 6px 12px var(--shadow-colour);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       padding: 32px;
       height: 100%;
     }
@@ -163,74 +149,47 @@
       font-weight: 700;
       margin-bottom: 16px;
     }
-    .card p {
+    .card p, .card ul {
       font-size: 14px;
       margin-bottom: 16px;
       color: var(--dark-blue);
     }
-    .card ul {
-      margin-left: 16px;
-      margin-bottom: 16px;
-      color: var(--dark-blue);
-    }
-    /* Portfolio card overrides */
+    .card ul { margin-left: 16px; }
+
+    /* Portfolio-specific overrides */
     .portfolio-card img {
-      width: 100%;
-      height: auto;
+      border-radius: 12px;
       display: block;
-      border-radius: 14px;
-      border: 1px solid var(--border-colour);
     }
     .portfolio-card .tags {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--dark-blue);
-      margin-top: 8px;
+      margin-bottom: 10px;
     }
-    /* Resume PDF preview container */
-    .cv-link {
-      margin-top: 16px;
-      font-size: 14px;
-    }
-    .cv-link a {
-      color: var(--orange);
-      font-weight: 600;
-    }
+
     /* Footer */
     footer {
       background: #0B1930;
       color: var(--dark-blue);
       padding: 40px 0;
       text-align: center;
-      font-size: 14px;
     }
-    /* Responsive tweaks */
+
+    /* Responsive adjustments */
     @media (max-width: 900px) {
       nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px;
-      }
-      section {
-        padding: 72px 0;
-      }
-      .hero {
-        padding-top: 80px;
-      }
-    }
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
         gap: 12px;
       }
-      .card {
-        padding: 24px;
-      }
-      .hero h1 {
-        font-size: 36px;
-      }
-      .hero p {
-        font-size: 16px;
-      }
+      .hero { padding-top: 80px; }
+      section { padding: 70px 0; }
+    }
+    @media (max-width: 600px) {
+      nav { flex-direction: column; gap: 12px; }
+      .hero h1 { font-size: 34px; }
+      .hero p { font-size: 16px; }
+      .card { padding: 24px; }
     }
   </style>
 </head>
@@ -243,7 +202,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -251,211 +209,215 @@
   </header>
 
   <main>
-    <!-- Hero section -->
+    <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <h1>Social Media Marketer &amp; Content Strategist</h1>
+        <h1>AI‑Driven Social Media Marketing & Growth</h1>
         <p>
-          AI marketing tips, content strategy and Instagram audits for real growth. I help
-          brands improve performance with data‑driven insights and engaging creative.
+          I’m Mohamed Umar, founder of SocialAuditHub. I help brands grow through actionable
+          marketing strategies, AI‑powered tools and compelling content. From detailed
+          audits to hands‑on content creation, I turn insights into real results.
         </p>
         <div class="cta">
-          <!-- Link to download CV file. Replace the href with your PDF file path in the repo. -->
-          <a href="MY.%20CV.pdf" class="btn-primary" download>Download CV</a>
-          <a href="#contact" class="btn-secondary">Hire Me</a>
+          <a href="MY_CV.pdf" class="btn btn-primary" download>Download CV</a>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
         </div>
       </div>
     </section>
 
-    <!-- About section -->
+    <!-- About -->
     <section id="about">
       <div class="container">
         <h2>About Me</h2>
         <p>
-          Passionate and self‑driven social media marketer with hands‑on experience in
-          Instagram audits, content creation and brand growth strategy. I focus on
-          helping brands improve content performance and audience engagement. Founder of
-          SocialAuditHub, delivering real social media audits for local businesses and
-          sharing AI marketing tips. Currently pursuing a Diploma in Digital Marketing
-          at ICBT Kandy. Fluent in English and Tamil. Open to full‑time and freelance
-          opportunities.
+          As a social media marketer based in Kandy, Sri Lanka, I combine data‑driven audit
+          insights with AI tools to craft marketing strategies that resonate. My journey began
+          with analysing Instagram accounts for local businesses; today I help brands across
+          industries build strong online identities through content planning, design and
+          optimisation. I’m fluent in English and Tamil and passionate about elevating brands
+          across Sri Lanka, Dubai and beyond.
         </p>
-        <div class="cv-link">
-          Want more details? <a href="MY.%20CV.pdf" download>View my full CV</a>
-        </div>
       </div>
     </section>
 
-    <!-- Services section -->
+    <!-- Services -->
     <section id="services">
       <div class="container">
-        <h2>Services</h2>
+        <h2>What I Do</h2>
         <div class="grid-2">
           <div class="card">
             <h3>Social Media Marketing</h3>
-            <p>
-              Comprehensive social media management across Instagram, Facebook and TikTok.
-              Content planning, scheduling and engagement to grow your brand presence.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Content Strategy</h3>
-            <p>
-              Data‑driven content strategies tailored to your audience. I develop ideas,
-              hooks and themes that support your business goals and brand voice.
-            </p>
-          </div>
-          <div class="card">
-            <h3>AI Tools &amp; Automations</h3>
-            <p>
-              Leverage cutting‑edge tools like ChatGPT, Canva and CapCut to streamline
-              ideation, design and editing. Save time while maintaining a consistent
-              look and feel.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Instagram Audits &amp; Case Studies</h3>
-            <p>
-              Deep audits of your Instagram account to uncover opportunities and
-              growth. Real case studies show how strategic changes can increase
-              reach and engagement.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience section -->
-    <section id="experience">
-      <div class="container">
-        <h2>Experience</h2>
-        <div class="grid-2">
-          <div class="card">
-            <h3>Founder &amp; Social Media Marketer – SocialAuditHub</h3>
-            <p>2023 – Present</p>
-            <p>
-              Launched SocialAuditHub to help local businesses grow through social
-              media marketing and AI‑powered insights.
-            </p>
+            <p>I manage social platforms end‑to‑end to build brand awareness, engage
+              audiences and drive growth.</p>
             <ul>
-              <li>Conducted in‑depth Instagram audits for cafés and boutique hotels in Kandy</li>
-              <li>Identified high‑performing content patterns and actionable marketing insights</li>
-              <li>Created and published audit‑driven content on Instagram and YouTube</li>
-              <li>Developed data‑driven content strategies to improve engagement and brand visibility</li>
-              <li>Designed professional visuals with Canva and managed schedules via Meta Business Suite</li>
+              <li>Channel strategy & setup</li>
+              <li>Content calendars & posting</li>
+              <li>Engagement & community management</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Education</h3>
-            <p>Diploma in Digital Marketing – ICBT Campus, Kandy</p>
-            <p>2023 – Present (Completing 2024)</p>
+            <h3>Content Strategy & Creation</h3>
+            <p>I plan, design and produce content that speaks to your audience and tells
+              your brand story.</p>
+            <ul>
+              <li>Ideation & storytelling</li>
+              <li>AI‑powered copywriting</li>
+              <li>Canva & CapCut design & edits</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>AI Tools & Automations</h3>
+            <p>Leveraging AI to streamline marketing processes, reduce production time
+              and unlock new creative possibilities.</p>
+            <ul>
+              <li>ChatGPT prompts & workflows</li>
+              <li>Automation with Meta Business Suite</li>
+              <li>Performance analytics & insights</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Instagram Audits & Case Studies</h3>
+            <p>I diagnose growth blockers and uncover opportunities through deep audits,
+              turning analysis into actionable recommendations.</p>
+            <ul>
+              <li>Profile & content analysis</li>
+              <li>Engagement & reach metrics</li>
+              <li>Improvement roadmap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience">
+      <div class="container">
+        <h2>Experience & Education</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Founder & Social Media Marketer – SocialAuditHub</h3>
+            <p><strong>2023 – Present</strong></p>
+            <ul>
+              <li>Conducted in‑depth social media audits for cafés and boutique hotels, analysing content performance, engagement metrics and growth opportunities.</li>
+              <li>Identified high‑performing content patterns and actionable marketing insights to improve reach, engagement and brand visibility.</li>
+              <li>Created and published audit‑driven content on Instagram and YouTube, demonstrating real‑world marketing analysis and strategy.</li>
+              <li>Developed data‑driven content strategies to enhance audience engagement and strengthen brand positioning.</li>
+              <li>Designed professional marketing visuals using Canva and managed content scheduling and optimisation via Meta Business Suite.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Diploma in Digital Marketing – ICBT Campus, Kandy</h3>
+            <p><strong>2025 – 2026 (Completed)</strong></p>
             <p>
-              Pursuing comprehensive digital marketing studies covering social media
-              management, analytics, branding, content marketing, SEO and PPC.
-            </p>
-            <p>
-              <strong>A/L &amp; O/L Education:</strong> ACAD Level O/L Completed – Sri Lanka National level. Advanced Level
-              (A/L) Completed – Commerce stream.
+              Completed a comprehensive diploma covering digital marketing fundamentals, social
+              media strategy, content marketing, and analytics. Gained practical skills in
+              campaign planning, consumer behaviour, paid media and measurement techniques.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills section -->
+    <!-- Skills -->
     <section id="skills">
       <div class="container">
         <h2>Skills</h2>
-        <div class="grid-3">
+        <div class="grid-2">
           <div class="card">
             <h3>Core Skills</h3>
             <ul>
-              <li>Social Media Marketing</li>
-              <li>Content Strategy</li>
-              <li>Instagram Auditing</li>
-              <li>Content Creation &amp; Storytelling</li>
-              <li>Brand Growth Strategy</li>
+              <li>Social Media Marketing & Management</li>
+              <li>Content Strategy & Storytelling</li>
+              <li>Instagram & TikTok Growth Hacks</li>
+              <li>Audience Engagement & Analytics</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Tools &amp; Platforms</h3>
+            <h3>Tools & Platforms</h3>
             <ul>
-              <li>Canva (advanced design skills)</li>
-              <li>ChatGPT &amp; AI tools for ideation</li>
-              <li>CapCut video editing</li>
-              <li>Meta Business Suite</li>
-              <li>Instagram Insights &amp; Analytics</li>
+              <li>Canva & CapCut</li>
+              <li>Meta Business Suite & Instagram Insights</li>
+              <li>ChatGPT & AI marketing tools</li>
+              <li>Google Analytics & SEO basics</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Languages &amp; More</h3>
+            <h3>Soft Skills</h3>
             <ul>
-              <li>English – Fluent</li>
-              <li>Tamil – Fluent</li>
-              <li>Sinhala – Basic</li>
-              <li>Strong communication &amp; collaboration</li>
-              <li>Continuous learner of AI &amp; marketing trends</li>
+              <li>Creative problem solving</li>
+              <li>Strategic thinking & planning</li>
+              <li>Communication & teamwork</li>
+              <li>Adaptability & learning mindset</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Languages</h3>
+            <ul>
+              <li>English (Fluent)</li>
+              <li>Tamil (Fluent)</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio section -->
+    <!-- Portfolio -->
     <section id="portfolio">
       <div class="container">
-        <h2>Portfolio</h2>
-        <!-- Audit 1 -->
+        <h2>Portfolio & Case Studies</h2>
+        <!-- Case study 1 -->
         <div class="card portfolio-card" style="margin-bottom:32px;">
-          <h3>Audit 01 – The Trees Café</h3>
-          <p class="tags">Profile review · Feed review · Caption review</p>
+          <h3>Case Study – The Trees Café (Instagram Audit)</h3>
+          <p class="tags">Profile review · Feed strategy · Caption optimisation</p>
           <div class="grid-2" style="margin-top:24px;">
-            <img src="audit1-profile.jpg" alt="Profile review of The Trees Cafe">
-            <img src="audit1-post.jpg" alt="Content feed review of The Trees Cafe">
-            <img src="audit1-caption.jpg" alt="Caption review of The Trees Cafe">
+            <img src="audit1-profile.jpg" alt="Profile review">
+            <img src="audit1-post.jpg" alt="Feed review">
+            <img src="audit1-caption.jpg" alt="Caption review">
           </div>
           <p style="margin-top:20px; color:var(--dark-blue);">
-            Instagram audit focused on brand presentation, content quality, engagement direction and practical
-            growth suggestions for a local café. View the full case study on request.
+            Diagnosed content and engagement challenges for The Trees Café and provided a
+            roadmap for improving profile clarity, feed consistency and caption strategy. The
+            audit uncovered opportunities to boost authenticity and customer connection.
           </p>
         </div>
-        <!-- Audit 2 -->
+        <!-- Case study 2 -->
         <div class="card portfolio-card">
-          <h3>Audit 02 – Viyana Boutique</h3>
-          <p class="tags">Video audit · Branding · Content strategy</p>
+          <h3>Case Study – Viyana Boutique (Video Audit & Strategy)</h3>
+          <p class="tags">Video audit · Branding · Growth recommendations</p>
           <div style="margin-top:24px;">
             <a href="https://drive.google.com/file/d/1FRQheTRfavjqa-FmMVk6CIwjmqBjKzKq/view?usp=sharing" target="_blank">
-              <img src="audit2-thumbnail.jpg" alt="Audit video preview for Viyana Boutique">
+              <img src="audit2-thumbnail.jpg" alt="Viyana Boutique audit video">
             </a>
           </div>
           <p style="margin-top:20px; color:var(--dark-blue);">
-            Short-form Instagram audit showing content quality, branding and engagement improvements for a boutique hotel. Click the image to watch the video.
+            A short-form audit video reviewing Viyana Boutique’s Instagram presence and
+            recommending branding and content improvements to increase reach and engagement.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Contact section -->
+    <!-- Contact -->
     <section id="contact">
       <div class="container">
-        <h2>Contact</h2>
+        <h2>Let’s Work Together</h2>
         <p>
-          Ready to grow your brand? I’m available for full‑time, freelance and remote opportunities. Let’s work together!
+          Ready to elevate your brand? I’m open to full‑time and freelance social media
+          marketing opportunities. Whether you need a complete channel strategy or hands‑on
+          content support, I’m here to help.
         </p>
-        <p style="margin-top:12px;">
+        <p style="margin-top:16px;">
           <strong>Phone:</strong> <a href="tel:+94760818230">+94 7608 18230</a><br>
           <strong>Email:</strong> <a href="mailto:mohamedumxr@gmail.com">mohamedumxr@gmail.com</a><br>
-          <strong>Location:</strong> Galgedara, Kandy, Sri Lanka
-        </p>
-        <p style="margin-top:12px;">
-          <strong>Portfolio:</strong> <a href="https://socialaudithub1.github.io/">socialaudithub1.github.io</a>
+          <strong>Location:</strong> Kandy, Sri Lanka<br>
+          <strong>Portfolio:</strong> <a href="https://socialaudithub1.github.io" target="_blank">socialaudithub1.github.io</a>
         </p>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 SocialAuditHub. All rights reserved.</p>
+    <p>© 2026 SocialAuditHub. All rights reserved.</p>
   </footer>
 </body>
 </html>
